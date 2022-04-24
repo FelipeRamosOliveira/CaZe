@@ -34,7 +34,7 @@ Em seguida execute o Makefile com o comando:
 make
 ```
 
-Para executar a API entre na pasta deploy e digite o comando:
+Para executar a API entre na pasta `src api/` e digite o comando:
 
 ```yml
 docker-compose build
