@@ -191,7 +191,6 @@ Resposta esperada :
 
 ```json
 {
-    "model details": "Pipeline(steps=[('columntransformer',
-    ColumnTransformer(transformers=[('num', SimpleImputer(strategy='constant'),                                                  ['OverallQual', 'YearBuilt','MasVnrArea', 'BsmtFinSF1','TotalBsmtSF', '1stFlrSF','2ndFlrSF', 'GrLivArea','FullBath', 'TotRmsAbvGrd','GarageYrBlt', 'GarageCars','GarageArea']),('cat',Pipeline(steps=[('imputer',SimpleImputer(strategy='most_frequen...  OneHotEncoder(handle_unknown='ignore',sparse=False))]), ['Neighborhood', 'ExterQual','BsmtQual', 'HeatingQC','CentralAir', 'KitchenQual','GarageFinish'])])),('gridsearchcv',GridSearchCV(cv=KFold(n_splits=5, random_state=42, shuffle=True),estimator=GradientBoostingRegressor(), param_grid={'learning_rate': [0.01, 0.02],'max_depth': [4, 6], 'n_estimators': [100, 500],'subsample': [0.9, 0.5]}))])"
+    "model details": "Pipeline(steps=[('columntransformer ..."
 }
 ```
