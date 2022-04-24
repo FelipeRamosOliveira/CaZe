@@ -17,13 +17,13 @@ def predict():
     body = request.json
     input = pd.DataFrame(body, index=[0])
     predict = model.predict(input)[0]
-    return jsonify({"estimatade house value": str(predict)})
+    return jsonify({"house value": str(predict)})
 
 
 @app.route("/details", methods=["GET"])
 def details():
     # return jsonify(model.get_params())
-    return jsonify({"model details": str(model.get_params()['model'])})
+    return jsonify({"model details": str(model)})
 
 
 if __name__ == "__main__":

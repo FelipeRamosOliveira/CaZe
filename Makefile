@@ -1,14 +1,7 @@
-#Paths
-ANALISYS_PATH = analisys
-DEPLOY_PATH = deploy
+# Install poetry and dependencies
 
-#Install poetry
-poetry:
-	python3 -m pip install poetry	
+install_poetry:
+	echo solving environment...
+	python3 -m pip install poetry
+	poetry install	
 
-#Install dependencies
-$(ANALISYS_PATH)/:
-	poetry install
-
-$(DEPLOY_PATH) /:
-	poetry install

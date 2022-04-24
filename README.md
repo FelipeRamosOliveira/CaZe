@@ -18,9 +18,23 @@ O conjunto de dados da Ames Housing foi compilado por Dean De Cock para uso na e
 
 O objetivo é desse projeto é prever o preço de venda de uma casa.
 
-## COMO EXECUTAR API
+---
 
-Dentro da pasta deploy execute:
+## COMO EXECUTAR O PROJETO
+
+Primiero clone o repositório com o comando :
+
+```sh
+git clone https://github.com/FelipeRamosOliveira/CaZe.git
+```
+
+Em seguida execute o Makefile com o comando:
+
+```sh
+make
+```
+
+Para executar a API entre na pasta deploy e digite o comando:
 
 ```yml
 docker-compose build
@@ -32,7 +46,19 @@ Em seguida execute:
 docker-compose up
 ```
 
-Por padrão a porta de comunicação com a API a é `5002`
+Por padrão a porta de comunicação com a API é a `5002`
+
+---
+
+## DIRETÓRIOS
+
+O projeto está dividio em :
+
+- analisys - Contem os códigos utilizados para análise de dados e construção de modelo de regressão.
+- src api - Scripts utlizados para construção da API
+- volume - Contem as o banco de dados utlizados, tabelas. versionadas (feature store) e perfil de dados utilizados.
+
+---
 
 ## CAMPOS DE DADOS
 
@@ -58,10 +84,15 @@ Aqui está uma breve descrição dos campos de entrada da API.
 - GarageCars: Tamanho da garagem em capacidade do carro
 - GarageArea: Tamanho da garagem em pés quadrados
 
-## PREVISÃO
+---
+
+## PREVISÃO DE VALOR
 
 Abaixo segue um exemplo de como relizar uma previsão via API:
 
+<details>
+  <summary> POST </summary>
+  
 ```python
 import requests
 import json
@@ -69,46 +100,51 @@ import json
 url = f"{host}/predict"
 
 payload = json.dumps({
-  "Neighborhood": "CollgCr",
-  "ExterQual": "Gd",
-  "BsmtQual": "Gd",
-  "HeatingQC": "Ex",
-  "CentralAir": "Y",
-  "KitchenQual": "Gd",
-  "GarageFinish": "RFn",
-  "OverallQual": 7,
-  "YearBuilt": 2003,
-  "MasVnrArea": 196,
-  "BsmtFinSF1": 706,
-  "TotalBsmtSF": 856,
-  "1stFlrSF": 856,
-  "2ndFlrSF": 854,
-  "GrLivArea": 1710,
-  "FullBath": 2,
-  "TotRmsAbvGrd": 8,
-  "GarageYrBlt": 2003,
-  "GarageCars": 2,
-  "GarageArea": 548
+"Neighborhood": "CollgCr",
+"ExterQual": "Gd",
+"BsmtQual": "Gd",
+"HeatingQC": "Ex",
+"CentralAir": "Y",
+"KitchenQual": "Gd",
+"GarageFinish": "RFn",
+"OverallQual": 7,
+"YearBuilt": 2003,
+"MasVnrArea": 196,
+"BsmtFinSF1": 706,
+"TotalBsmtSF": 856,
+"1stFlrSF": 856,
+"2ndFlrSF": 854,
+"GrLivArea": 1710,
+"FullBath": 2,
+"TotRmsAbvGrd": 8,
+"GarageYrBlt": 2003,
+"GarageCars": 2,
+"GarageArea": 548
 })
 headers = {
-  'Content-Type': 'application/json'
+'Content-Type': 'application/json'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
 
-```
+````
 
 Resposta esperada :
 
 ```json
-{ "estimatade house value": "208200.28" }
-```
+{ "house value": "203675.86" }
+````
+
+</details>
 
 ## DETALHES DO MODELO
 
-Abaixo segue um exemplo de como consultar os detalhes do modelo utlizado via API:
+Abaixo segue um exemplo de como consultar os detalhes do modelo via API:
+
+<details>
+  <summary> GET </summary>
 
 ```python
 import requests
@@ -128,6 +164,9 @@ Resposta esperada :
 
 ```json
 {
-  "model details": "XGBRegressor(base_score=0.5, booster='gbtree', callbacks=None,\n             colsample_bylevel=1, colsample_bynode=1, colsample_bytree=1,\n             early_stopping_rounds=None, enable_categorical=False,\n             eval_metric=None, gamma=0, gpu_id=-1, grow_policy='depthwise',\n             importance_type=None, interaction_constraints='',\n             learning_rate=0.300000012, max_bin=256, max_cat_to_onehot=4,\n             max_delta_step=0, max_depth=6, max_leaves=0, min_child_weight=1,\n             missing=nan, monotone_constraints='()', n_estimators=100, n_jobs=0,\n             num_parallel_tree=1, predictor='auto', random_state=42,\n             reg_alpha=0, reg_lambda=1, ...)"
+    "model details": "Pipeline(steps=[('columntransformer',
+    ColumnTransformer(transformers=[('num', SimpleImputer(strategy='constant'),                                                  ['OverallQual', 'YearBuilt','MasVnrArea', 'BsmtFinSF1','TotalBsmtSF', '1stFlrSF','2ndFlrSF', 'GrLivArea','FullBath', 'TotRmsAbvGrd','GarageYrBlt', 'GarageCars','GarageArea']),('cat',Pipeline(steps=[('imputer',SimpleImputer(strategy='most_frequen...  OneHotEncoder(handle_unknown='ignore',sparse=False))]), ['Neighborhood', 'ExterQual','BsmtQual', 'HeatingQC','CentralAir', 'KitchenQual','GarageFinish'])])),('gridsearchcv',GridSearchCV(cv=KFold(n_splits=5, random_state=42, shuffle=True),estimator=GradientBoostingRegressor(), param_grid={'learning_rate': [0.01, 0.02],'max_depth': [4, 6], 'n_estimators': [100, 500],'subsample': [0.9, 0.5]}))])"
 }
 ```
+
+</details>
