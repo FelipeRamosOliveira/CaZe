@@ -16,7 +16,7 @@ O conjunto de dados da Ames Housing foi compilado por Dean De Cock para uso na e
 
 **META**
 
-O objetivo é desse projeto é prever o preço de venda de uma casa.
+O objetivo é desse projeto é prever o preço de venda de casas.
 
 ---
 
@@ -24,13 +24,13 @@ O objetivo é desse projeto é prever o preço de venda de uma casa.
 
 Primiero clone o repositório com o comando :
 
-```sh
+```yml
 git clone https://github.com/FelipeRamosOliveira/CaZe.git
 ```
 
 Em seguida execute o Makefile com o comando:
 
-```sh
+```yml
 make
 ```
 
@@ -64,13 +64,48 @@ O projeto está dividio em :
 
 Aqui está uma breve descrição dos campos de entrada da API.
 
-- Neighborhood: locais físicos dentro dos limites da cidade de Ames
-- ExterQual: Qualidade do material exterior
-- BsmtQual: Altura do porão
-- HeatingQC: Qualidade e condição de aquecimento
-- CentralAir: Ar condicionado central
-- KitchenQual: Qualidade da cozinha
-- Qualidade geral: qualidade geral do material e do acabamento
+- Neighborhood: locais físicos dentro dos limites da cidade de Ames. Possivéis valores:
+
+```yml
+['CollgCr' 'Veenker' 'Crawfor' 'NoRidge' 'Mitchel' 'Somerst' 'NWAmes' 'OldTown' 'BrkSide' 'Sawyer' 'NridgHt' 'NAmes' 'SawyerW' 'IDOTRR' 'MeadowV' 'Edwards' 'Timber' 'Gilbert' 'StoneBr' 'ClearCr' 'NPkVill''Blmngtn' 'BrDale' 'SWISU' 'Blueste']
+```
+
+- ExterQual: Qualidade do material exterior. Possivéis valores:
+
+```yml
+['Gd' 'TA' 'Ex' None 'Fa']
+```
+
+- BsmtQual: Altura do porão. Possivéis valores:
+
+```yml
+['Ex' 'Gd' 'TA' 'Fa' 'Po']
+```
+
+- HeatingQC: Qualidade e condição de aquecimento. Possivéis valores:
+
+```yml
+['Ex' 'Gd' 'TA' 'Fa' 'Po']
+```
+
+- CentralAir: Ar condicionado central. Possivéis valores:
+
+```yml
+['Y' 'N']
+```
+
+- KitchenQual: Qualidade da cozinha. Possivéis valores:
+
+```yml
+['Gd' 'TA' 'Ex' 'Fa']
+```
+
+- Qualidade geral: qualidade geral do material e do acabamento. Possivéis valores:
+
+```yml
+['RFn' 'Unf' 'Fin' None]
+```
+
 - Ano de construção: data de construção original
 - MasVnrArea: Área de folheado de alvenaria em pés quadrados
 - BsmtFinSF1: Tipo 1 pés quadrados acabados
