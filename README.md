@@ -5,7 +5,7 @@ Este projeto foi baseado na competição de Precificação de Casas (Housing Pri
 O projeto explora os seguintes tópicos:
 
 - aprendizado de máquina
-- programação orientada a objetos,
+- programação orientada a objetos
 - docker
 - APIs
 - feature store.
@@ -16,13 +16,13 @@ O conjunto de dados da Ames Housing foi compilado por Dean De Cock para uso na e
 
 **META**
 
-O objetivo é desse projeto é prever o preço de venda de casas.
+O objetivo desse projeto é prever o preço de venda de casas.
 
 ---
 
 ## COMO EXECUTAR O PROJETO
 
-Primiero clone o repositório com o comando :
+Primeiro clone o repositório com o comando :
 
 ```yml
 git clone https://github.com/FelipeRamosOliveira/CaZe.git
@@ -52,11 +52,11 @@ Por padrão a porta de comunicação com a API é a `5002`
 
 ## DIRETÓRIOS
 
-O projeto está dividio em :
+O projeto está dividido em :
 
 - analisys - Contem os códigos utilizados para análise de dados e construção de modelo de regressão.
 - src api - Scripts utlizados para construção da API
-- volume - Contem as o banco de dados utlizados, tabelas. versionadas (feature store) e perfil de dados utilizados.
+- volume - Contem o banco de dados utlizados, tabelas versionadas (feature store) e perfil de dados utilizados.
 
 ---
 
@@ -64,43 +64,43 @@ O projeto está dividio em :
 
 Aqui está uma breve descrição dos campos de entrada da API.
 
-- Neighborhood: locais físicos dentro dos limites da cidade de Ames. Possivéis valores:
+- Neighborhood: locais físicos dentro dos limites da cidade de Ames. Possíveis valores:
 
 ```yml
 ['CollgCr' 'Veenker' 'Crawfor' 'NoRidge' 'Mitchel' 'Somerst' 'NWAmes' 'OldTown' 'BrkSide' 'Sawyer' 'NridgHt' 'NAmes' 'SawyerW' 'IDOTRR' 'MeadowV' 'Edwards' 'Timber' 'Gilbert' 'StoneBr' 'ClearCr' 'NPkVill''Blmngtn' 'BrDale' 'SWISU' 'Blueste']
 ```
 
-- ExterQual: Qualidade do material exterior. Possivéis valores:
+- ExterQual: Qualidade do material exterior. Possíveis valores:
 
 ```yml
 ['Gd' 'TA' 'Ex' None 'Fa']
 ```
 
-- BsmtQual: Altura do porão. Possivéis valores:
+- BsmtQual: Altura do porão. Possíveis valores:
 
 ```yml
 ['Ex' 'Gd' 'TA' 'Fa' 'Po']
 ```
 
-- HeatingQC: Qualidade e condição de aquecimento. Possivéis valores:
+- HeatingQC: Qualidade e condição de aquecimento. Possíveis valores:
 
 ```yml
 ['Ex' 'Gd' 'TA' 'Fa' 'Po']
 ```
 
-- CentralAir: Ar condicionado central. Possivéis valores:
+- CentralAir: Ar condicionado central. Possíveis valores:
 
 ```yml
 ['Y' 'N']
 ```
 
-- KitchenQual: Qualidade da cozinha. Possivéis valores:
+- KitchenQual: Qualidade da cozinha. Possíveis valores:
 
 ```yml
 ['Gd' 'TA' 'Ex' 'Fa']
 ```
 
-- Qualidade geral: qualidade geral do material e do acabamento. Possivéis valores:
+- Qualidade geral: qualidade geral do material e do acabamento. Possíveis valores:
 
 ```yml
 ['RFn' 'Unf' 'Fin' None]
