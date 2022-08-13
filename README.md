@@ -54,9 +54,14 @@ Por padrão a porta de comunicação com a API é a `5002`
 
 O projeto está dividido em :
 
-- analisys - Contem os códigos utilizados para análise de dados e construção de modelo de regressão.
-- src api - Scripts utlizados para construção da API
-- volume - Contem o banco de dados utlizados, tabelas versionadas (feature store) e perfil de dados utilizados.
+```
+.
+├── notebooks   --> Contem os códigos utilizados para análise de dados e construção de modelo.
+├── src         --> Scripts utlizados para construção da API
+│   └──  app.py
+└── volume      --> Contem o banco de dados utlizados
+    └── db.sqlite
+```
 
 ---
 
@@ -191,6 +196,6 @@ Resposta esperada :
 
 ```json
 {
-    "model details": "Pipeline(steps=[('columntransformer ..."
+  "model details": "Pipeline(steps=[('columntransformer ..."
 }
 ```
