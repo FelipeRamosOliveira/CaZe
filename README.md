@@ -126,6 +126,60 @@ Aqui está uma breve descrição dos campos de entrada da API.
 
 ---
 
+## STATUS DO MODELO
+
+Abaixo segue um exemplo de como verificar se a API está funcionando
+
+```python
+
+import requests
+
+url = "http://localhost:5000/predict"
+
+payload={}
+headers = {}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+
+```
+
+Resposta esperada :
+
+```json
+{
+    "status": "ativo"
+}
+
+```
+
+## DETALHES DO MODELO
+
+Abaixo segue um exemplo de como consultar os detalhes do modelo via API:
+
+```python
+import requests
+
+url = f"{host}/details"
+
+payload={}
+headers = {}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+
+```
+
+Resposta esperada :
+
+```json
+{
+  "model details": "Pipeline(steps=[('columntransformer ..."
+}
+```
+
 ## PREVISÃO DE VALOR
 
 Abaixo segue um exemplo de como relizar uma previsão via API:
@@ -174,28 +228,4 @@ Resposta esperada :
 { "house value": "203675.86" }
 ```
 
-## DETALHES DO MODELO
 
-Abaixo segue um exemplo de como consultar os detalhes do modelo via API:
-
-```python
-import requests
-
-url = f"{host}/details"
-
-payload={}
-headers = {}
-
-response = requests.request("GET", url, headers=headers, data=payload)
-
-print(response.text)
-
-```
-
-Resposta esperada :
-
-```json
-{
-  "model details": "Pipeline(steps=[('columntransformer ..."
-}
-```
