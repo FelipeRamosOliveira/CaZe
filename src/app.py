@@ -11,8 +11,18 @@ model = pickle.load(open(f'volume/model_V1.pkl', 'rb'))
 # API SERVICE
 app = Flask(__name__)
 
+# GET STATUS
+@app.route("/", methods=["GET"]) 
+def status():
+    return jsonify({"status": "ativo"})
 
-@app.route("/predict", methods=["POST"])
+# GET MODEL DETAILS
+@app.route("/details", methods=["GET"])
+def details():
+    return jsonify({"model details": str(model)})
+
+# POST MODEL PREDICT
+@app.route("/predict", methods=["POST"]) 
 def predict():
     body = request.json
     input = pd.DataFrame(body, index=[0])
@@ -20,10 +30,9 @@ def predict():
     return jsonify({"house value": str(predict)})
 
 
-@app.route("/details", methods=["GET"])
-def details():
-    # return jsonify(model.get_params())
-    return jsonify({"model details": str(model)})
+
+
+
 
 
 if __name__ == "__main__":
