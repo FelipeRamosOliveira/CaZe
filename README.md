@@ -65,7 +65,7 @@ O projeto está dividido em :
 
 ---
 
-## CAMPOS DE DADOS
+## DICIONÁRIO DE DADOS
 
 Aqui está uma breve descrição dos campos de entrada da API.
 
@@ -126,7 +126,7 @@ Aqui está uma breve descrição dos campos de entrada da API.
 
 ---
 
-## STATUS DO MODELO
+## STATUS DA API
 
 Abaixo segue um exemplo de como verificar se a API está funcionando
 
