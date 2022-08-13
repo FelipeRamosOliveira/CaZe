@@ -1,3 +1,8 @@
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FelipeRamosOliveira/Portfolio/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/FelipeRamosOliveira/Portfolio.svg)](https://img.shields.io/github/issues/FelipeRamosOliveira/Portfolio.svg)
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8+-000000.svg)](https://www.python.org/downloads/release/python-360/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 ## O PROBLEMA
 
 Este projeto foi baseado na competição de Precificação de Casas (Housing Prices Competition for Kaggle Learn Users) do [Kaggle](https://www.kaggle.com/competitions/home-data-for-ml-course).
