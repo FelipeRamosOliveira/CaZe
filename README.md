@@ -10,11 +10,11 @@ O projeto explora os seguintes tópicos:
 - APIs
 - feature store.
 
-**CONJUNTO DE DADOS**
+##### CONJUNTO DE DADOS
 
 O conjunto de dados da Ames Housing foi compilado por Dean De Cock para uso na educação em ciência de dados. É uma alternativa incrível para cientistas de dados que procuram uma versão modernizada e expandida do conjunto de dados do Boston Housing frequentemente citado.
 
-**META**
+##### META
 
 O objetivo desse projeto é prever o preço de venda de casas.
 
